@@ -122,6 +122,14 @@ When the inbound message notification is pushed to your server as a HTTP POST re
     inbound_messages = OneApi::SmsClient.unserialize_inbound_messages(http_body)
 
 
+How to run unit tests?
+-------
+
+```sh
+rake
+```
+
+
 License
 -------
 
