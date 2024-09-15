@@ -149,7 +149,7 @@ module OneApi
                     body += line + "\n"
                 end
             end
-            return method, url, headers, body.strip
+            [method, url, headers, body.strip]
         end
 
     end

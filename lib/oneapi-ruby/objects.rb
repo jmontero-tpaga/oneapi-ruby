@@ -40,7 +40,7 @@ module OneApi
                 return nil
             end
 
-            return Conversions.from_json(@classs, value, is_error=nil)
+            Conversions.from_json(@classs, value, is_error=nil)
         end
 
         def to_json(value)
@@ -68,7 +68,7 @@ module OneApi
                 result.push(Conversions.from_json(@classs, value, is_error=nil))
             end
 
-            return result
+            result
         end
 
         def to_json(value)
@@ -190,7 +190,7 @@ module OneApi
         end
 
         def is_success
-            return @exception == nil
+            @exception == nil
         end
 
     end

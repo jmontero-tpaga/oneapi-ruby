@@ -41,7 +41,7 @@ module OneApi
 
             is_success, result = execute_POST('/1/customerProfile/login', params)
 
-            return fill_oneapi_authentication(result, is_success)
+            fill_oneapi_authentication(result, is_success)
         end
 
         def get_or_create_client_correlator(client_correlator=nil)
@@ -49,7 +49,7 @@ module OneApi
                 return client_correlator
             end
 
-            return Utils.get_random_alphanumeric_string
+            Utils.get_random_alphanumeric_string
         end
 
         def prepare_headers(request)
@@ -85,7 +85,7 @@ module OneApi
                 result += URI::DEFAULT_PARSER.escape(key.to_s) + '=' + URI::DEFAULT_PARSER.escape(params[key].to_s)
             end
 
-            return result
+            result
         end
 
         def execute_GET(url, params=nil)
@@ -123,7 +123,7 @@ module OneApi
             response = http.request(request)
             puts "response = #{response.body}"
 
-            return is_success(response), response.body
+            [is_success(response), response.body]
         end
 
         def get_rest_url(rest_path)
@@ -222,7 +222,7 @@ module OneApi
                     params
             )
 
-            return convert_from_json(DeliveryInfoList, result, !is_success)
+            convert_from_json(DeliveryInfoList, result, !is_success)
         end
 
         def retrieve_inbound_messages(max_number=nil)
@@ -239,7 +239,7 @@ module OneApi
                     params
             )
 
-            return convert_from_json(InboundSmsMessages, result, ! is_success)
+            convert_from_json(InboundSmsMessages, result, ! is_success)
         end
 
         # To be used when http push with a delivery notification comes.
@@ -280,9 +280,9 @@ module OneApi
 
             if Utils.empty(notify_url)
                 json = JSONUtils.get_json(result)
-                return convert_from_json(TerminalRoamingStatus, json['roaming'], ! is_success);
+                convert_from_json(TerminalRoamingStatus, json['roaming'], ! is_success);
             else
-                return convert_from_json(GenericObject, {}, ! is_success);
+                convert_from_json(GenericObject, {}, ! is_success);
             end
         end
 
@@ -302,14 +302,14 @@ module OneApi
 
         def get_account_balance
             is_success, result = execute_GET('/1/customerProfile/balance')
-            
-            return convert_from_json(AccountBalance, result, ! is_success)
+
+            convert_from_json(AccountBalance, result, ! is_success)
         end
 
         def get_customer_profile
             is_success, result = execute_GET('/1/customerProfile')
 
-            return convert_from_json(CustomerProfile, result, ! is_success)
+            convert_from_json(CustomerProfile, result, ! is_success)
         end
 
     end
