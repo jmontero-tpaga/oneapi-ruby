@@ -22,8 +22,8 @@ puts password
 
 customer_profile_client = OneApi::CustomerProfileClient.new(username, password)
 
-customer_profile = customer_profile_client.get_customer_profile()
+customer_profile = customer_profile_client.get_customer_profile
 puts customer_profile.inspect
 
-account_balance = customer_profile_client.get_account_balance()
+account_balance = customer_profile_client.get_account_balance
 puts account_balance.inspect

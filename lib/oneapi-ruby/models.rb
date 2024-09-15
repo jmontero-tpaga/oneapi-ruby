@@ -8,10 +8,10 @@ module OneApi
 
     class OneApiAuthentication < OneApiModel
 
-        oneapi_attr_accessor :username, FieldConversionRule.new()
-        oneapi_attr_accessor :password, FieldConversionRule.new()
+        oneapi_attr_accessor :username, FieldConversionRule.new
+        oneapi_attr_accessor :password, FieldConversionRule.new
         oneapi_attr_accessor :ibsso_token, FieldConversionRule.new('login.ibAuthCookie | TODO')
-        oneapi_attr_accessor :authenticated, FieldConversionRule.new()
+        oneapi_attr_accessor :authenticated, FieldConversionRule.new
         oneapi_attr_accessor :verified, FieldConversionRule.new('login.verified | TODO')
 
     end
@@ -47,11 +47,11 @@ module OneApi
 
         oneapi_attr_accessor :sender_address, FieldConversionRule.new(:senderAddress)
         oneapi_attr_accessor :sender_name, FieldConversionRule.new(:senderName)
-        oneapi_attr_accessor :message, FieldConversionRule.new()
-        oneapi_attr_accessor :address, FieldConversionRule.new()
+        oneapi_attr_accessor :message, FieldConversionRule.new
+        oneapi_attr_accessor :address, FieldConversionRule.new
         oneapi_attr_accessor :client_correlator, FieldConversionRule.new(:clientCorrelator)
         oneapi_attr_accessor :notify_url, FieldConversionRule.new(:notifyUrl)
-        oneapi_attr_accessor :callback_data, FieldConversionRule.new()
+        oneapi_attr_accessor :callback_data, FieldConversionRule.new
         oneapi_attr_accessor :language, ObjectFieldConverter.new(Language,'language')
 
     end
@@ -121,7 +121,7 @@ module OneApi
     class TerminalRoamingStatus < OneApiModel
 
         oneapi_attr_accessor :servingMccMnc, ObjectFieldConverter.new(ServingMccMnc, 'servingMccMnc')
-        oneapi_attr_accessor :address, FieldConversionRule.new()
+        oneapi_attr_accessor :address, FieldConversionRule.new
         oneapi_attr_accessor :currentRoaming, FieldConversionRule.new('currentRoaming')
         oneapi_attr_accessor :resourceURL, FieldConversionRule.new('resourceURL')
         oneapi_attr_accessor :retrievalStatus, FieldConversionRule.new('retrievalStatus')
@@ -144,19 +144,19 @@ module OneApi
 
     class CustomerProfile < OneApiModel
 
-        oneapi_attr_accessor :id, FieldConversionRule.new()
-        oneapi_attr_accessor :username, FieldConversionRule.new()
-        oneapi_attr_accessor :forename, FieldConversionRule.new()
-        oneapi_attr_accessor :surname, FieldConversionRule.new()
-        oneapi_attr_accessor :street, FieldConversionRule.new()
-        oneapi_attr_accessor :city, FieldConversionRule.new()
+        oneapi_attr_accessor :id, FieldConversionRule.new
+        oneapi_attr_accessor :username, FieldConversionRule.new
+        oneapi_attr_accessor :forename, FieldConversionRule.new
+        oneapi_attr_accessor :surname, FieldConversionRule.new
+        oneapi_attr_accessor :street, FieldConversionRule.new
+        oneapi_attr_accessor :city, FieldConversionRule.new
         oneapi_attr_accessor :zip_code, FieldConversionRule.new('zipCode')
-        oneapi_attr_accessor :telephone, FieldConversionRule.new()
-        oneapi_attr_accessor :gsm, FieldConversionRule.new()
-        oneapi_attr_accessor :fax, FieldConversionRule.new()
-        oneapi_attr_accessor :email, FieldConversionRule.new()
-        oneapi_attr_accessor :msn, FieldConversionRule.new()
-        oneapi_attr_accessor :skype, FieldConversionRule.new()
+        oneapi_attr_accessor :telephone, FieldConversionRule.new
+        oneapi_attr_accessor :gsm, FieldConversionRule.new
+        oneapi_attr_accessor :fax, FieldConversionRule.new
+        oneapi_attr_accessor :email, FieldConversionRule.new
+        oneapi_attr_accessor :msn, FieldConversionRule.new
+        oneapi_attr_accessor :skype, FieldConversionRule.new
         oneapi_attr_accessor :country_id, FieldConversionRule.new('countryId')
         oneapi_attr_accessor :timezone_id, FieldConversionRule.new('timezoneId')
         oneapi_attr_accessor :primary_language_id, FieldConversionRule.new('primaryLanguageId')
@@ -166,23 +166,23 @@ module OneApi
 
     class Currency < OneApiModel
 
-        oneapi_attr_accessor :id, FieldConversionRule.new()
+        oneapi_attr_accessor :id, FieldConversionRule.new
         oneapi_attr_accessor :currency_name, FieldConversionRule.new('currencyName')
-        oneapi_attr_accessor :symbol, FieldConversionRule.new()
+        oneapi_attr_accessor :symbol, FieldConversionRule.new
 
     end
 
     class Currency < OneApiModel
 
-        oneapi_attr_accessor :id, FieldConversionRule.new()
+        oneapi_attr_accessor :id, FieldConversionRule.new
         oneapi_attr_accessor :currency_name, FieldConversionRule.new('currencyName')
-        oneapi_attr_accessor :symbol, FieldConversionRule.new()
+        oneapi_attr_accessor :symbol, FieldConversionRule.new
 
     end
 
     class AccountBalance < OneApiModel
 
-        oneapi_attr_accessor :balance, FieldConversionRule.new()
+        oneapi_attr_accessor :balance, FieldConversionRule.new
         oneapi_attr_accessor :currency, ObjectFieldConverter.new(Currency)
 
     end
