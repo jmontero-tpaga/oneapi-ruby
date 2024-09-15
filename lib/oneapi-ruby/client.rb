@@ -280,9 +280,9 @@ module OneApi
 
             if Utils.empty(notify_url)
                 json = JSONUtils.get_json(result)
-                convert_from_json(TerminalRoamingStatus, json['roaming'], ! is_success);
+                convert_from_json(TerminalRoamingStatus, json['roaming'], ! is_success)
             else
-                convert_from_json(GenericObject, {}, ! is_success);
+                convert_from_json(GenericObject, {}, ! is_success)
             end
         end
 

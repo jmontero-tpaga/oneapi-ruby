@@ -102,7 +102,7 @@ module OneApi
 	class PartOfUrlFieldConversionRule < FieldConversionRule
         def initialize(json_field_name=nil, part_index=nil)
             super(json_field_name)
-			@part_index = part_index;
+			@part_index = part_index
         end
 
         def from_json(value)
