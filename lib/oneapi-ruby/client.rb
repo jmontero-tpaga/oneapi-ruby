@@ -75,14 +75,14 @@ module OneApi
                 return ''
             end
             if params.instance_of? String
-                return URI.encode(params)
+                return URI::DEFAULT_PARSER.escape(params)
             end
             result = ''
             params.each_key do |key|
                 if ! Utils.empty(result)
                     result += '&'
                 end
-                result += URI.encode(key.to_s) + '=' + URI.encode(params[key].to_s)
+                result += URI::DEFAULT_PARSER.escape(key.to_s) + '=' + URI::DEFAULT_PARSER.escape(params[key].to_s)
             end
 
             return result
@@ -98,7 +98,7 @@ module OneApi
 
         def execute_request(http_method, url, params)
             rest_url = get_rest_url(url)
-            uri = URI(URI.encode(rest_url))
+            uri = URI(URI::DEFAULT_PARSER.escape(rest_url))
 
             if Utils.empty(params)
                 params = {}
