@@ -33,7 +33,7 @@ module OneApi
         end
 
 
-        def login()
+        def login
             params = {
                     'username' => @username,
                     'password' => @password,
@@ -49,7 +49,7 @@ module OneApi
                 return client_correlator
             end
 
-            return Utils.get_random_alphanumeric_string()
+            return Utils.get_random_alphanumeric_string
         end
 
         def prepare_headers(request)
@@ -171,7 +171,7 @@ module OneApi
         def send_sms(sms)
             client_correlator = sms.client_correlator
             if not client_correlator
-                client_correlator = Utils.get_random_alphanumeric_string()
+                client_correlator = Utils.get_random_alphanumeric_string
             end
 
             params = {
@@ -300,13 +300,13 @@ module OneApi
             super(username, password, base_url)
         end
 
-        def get_account_balance()
+        def get_account_balance
             is_success, result = execute_GET('/1/customerProfile/balance')
             
             return convert_from_json(AccountBalance, result, ! is_success)
         end
 
-        def get_customer_profile()
+        def get_customer_profile
             is_success, result = execute_GET('/1/customerProfile')
 
             return convert_from_json(CustomerProfile, result, ! is_success)

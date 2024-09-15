@@ -20,7 +20,7 @@ end
 sms_client = OneApi::SmsClient.new(username, password)
 
 # example:retrieve-inbound-messages
-result = sms_client.retrieve_inbound_messages()
+result = sms_client.retrieve_inbound_messages
 # ----------------------------------------------------------------------------------------------------
 
 puts result.inspect
