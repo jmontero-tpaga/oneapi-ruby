@@ -1,7 +1,7 @@
 require 'minitest/autorun'
-require 'oneapi/client'
+require 'oneapi-ruby/client'
  
-class OneApiTest < MiniTest::Unit::TestCase
+class OneApiTest < Minitest::Test
 
     def test_empty
         assert_equal OneApi::Utils.empty(0), true
